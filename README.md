@@ -28,7 +28,6 @@ flowchart LR
     Browser -->|dev mode: NEXT_PUBLIC_API_URL| Server
 ```
 
-# Agent Chat UI
 
 Agent Chat UI is a Next.js application which enables chatting with any LangGraph server with a `messages` key through a chat interface.
 
