@@ -37,18 +37,14 @@ Agent Chat UI is a Next.js application which enables chatting with any LangGraph
 ## Setup
 
 > [!TIP]
-> Don't want to run the app locally? Use the deployed site here: [agentchat.vercel.app](https://agentchat.vercel.app)!
+> [!NOTE]
+> This fork has no hosted deployment — run it locally or deploy your own instance
+> (the `agentchat.vercel.app` demo linked in the upstream docs is langchain-ai's, not ours).
 
-First, clone the repository, or run the [`npx` command](https://www.npmjs.com/package/create-agent-chat-app):
-
-```bash
-npx create-agent-chat-app
-```
-
-or
+Clone this fork directly (the upstream [`npx create-agent-chat-app`](https://www.npmjs.com/package/create-agent-chat-app) scaffolds langchain-ai's repo, not this fork):
 
 ```bash
-git clone https://github.com/langchain-ai/agent-chat-ui.git
+git clone https://github.com/toxicwind/agent-chat-ui.git
 
 cd agent-chat-ui
 ```
@@ -246,7 +242,7 @@ Let's cover what each of these environment variables does:
 
 - `NEXT_PUBLIC_ASSISTANT_ID`: The ID of the assistant you want to use when fetching, and submitting runs via the chat interface. This still needs the `NEXT_PUBLIC_` prefix, since it's not a secret, and we use it on the client when submitting requests.
 - `LANGGRAPH_API_URL`: The URL of your LangGraph server. This should be the production deployment URL.
-- `NEXT_PUBLIC_API_URL`: The URL of your website + `/api`. This is how you connect to the API proxy. For the [Agent Chat demo](https://agentchat.vercel.app), this would be set as `https://agentchat.vercel.app/api`. You should set this to whatever your production URL is.
+- `NEXT_PUBLIC_API_URL`: The URL of your website + `/api`. This is how you connect to the API proxy. Set this to your deployment's URL + `/api` (e.g. `https://your-deployment.example.com/api`).
 - `LANGSMITH_API_KEY`: Your LangSmith API key to use when authenticating requests sent to LangGraph servers. Once again, do _not_ prefix this with `NEXT_PUBLIC_` since it's a secret, and is only used on the server when the API proxy injects it into the request to your deployed LangGraph server.
 
 For in depth documentation, consult the [LangGraph Next.js API Passthrough](https://www.npmjs.com/package/langgraph-nextjs-api-passthrough) docs.
@@ -284,4 +280,4 @@ const streamValue = useTypedStream({
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Copyright (c) 2025 Brace Sproul.
+MIT — see [LICENSE](LICENSE). Copyright (c) 2025 Brace Sproul (upstream); fork maintained by toxicwind — [toxicwind/agent-chat-ui](https://github.com/toxicwind/agent-chat-ui).
